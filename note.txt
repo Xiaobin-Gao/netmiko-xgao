@@ -1,0 +1,15 @@
+device = {
+... 'ip': '134.6.190.209',
+... 'device_type': 'cisco_ios',
+...
+... 'username': 'xgao',
+... 'password': 'airplane640'
+... }
+
+
+netmiko.ssh_exception.NetmikoTimeoutException
+netmiko.ssh_exception.NetmikoAuthenticationException
+
+>>> dir(netmiko)
+['BaseConnection', 
+'CNTL_SHIFT_6', 'ConnectHandler', 'FileTransfer', 'InLineTransfer', 'NetMikoAuthenticationException', 'NetMikoTimeoutException', 'Netmiko', 'NetmikoAuthenticationException', 'NetmikoTimeoutException', 'SCPConn', 'SSHDetect', '__all__', '__builtins__', '__cached__', '__doc__', '__file__', '__loader__', '__name__', '__package__', '__path__', '__spec__', '__version__', '_textfsm', 'a10', 'accedian', 'alcatel', 'apresia', 'arista', 'aruba', 'base_connection', 'calix', 'checkpoint', 'ciena', 'cisco', 'cisco_base_connection', 'citrix', 'cloudgenix', 'coriant', 'dell', 'eltex', 'endace', 'enterasys', 'extreme', 'f5', 'file_transfer', 'flexvnf', 'fortinet', 'hp', 'huawei', 'ipinfusion', 'juniper', 'keymile', 'linux', 'log', 'logging', 'mellanox', 'mikrotik', 'mrv', 'netapp', 'netmiko_globals', 'nokia', 'oneaccess', 'ovs', 'paloalto', 'platforms', 'pluribus', 'quanta', 'rad', 'redispatch', 'ruckus', 'ruijie', 'scp_functions', 'scp_handler', 'ssh_autodetect', 'ssh_dispatcher', 'ssh_exception', 'terminal_server', 'ubiquiti', 'utilities', 'vyos']

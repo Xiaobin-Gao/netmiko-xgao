@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Connect to Device</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/validation.css') }}">
+</head>
+
+<body>
+    <h1>Connect to Device</h1>
+    {% for msg in get_flashed_messages() %}
+    <span id="required">{{ msg }}</span><br><br> {% endfor %}
+    <fieldset>
+        <legend>Connect to Device</legend>
+        <form action="/" method="POST">
+            IP<br>
+            <input type="text" name="ip"><br> Device Type<br>
+            <select name="dtype">
+                <option value="">--- Select device type ---</option>
+                {% for device in devices %}
+                <option>{{ device }}</option>
+                {% endfor %}
+            </select>
+            <br> Username
+            <br>
+            <input type="text" name="uname"><br> Password
+            <br>
+            <input type="password" name="pwd"><br>
+            <br>
+            <input type="submit" value="Connect"><br>
+        </form>
+    </fieldset>
+</body>
+
+</html>

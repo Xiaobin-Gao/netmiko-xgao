@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Enter Command</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/validation.css') }}">
+</head>
+
+<body>
+    <h1>{% if conn %} {{ conn.host }} {% else %} <a href="/">Reconnect...</a>{% endif %}</h1>
+    {% for cate, msg in get_flashed_messages(with_categories=true) %} {% if cate == 'succeed' %}
+    <span id="succeed">{{ msg }}</span> <br><br> {% else %}
+    <span id="required">{{ msg }}</span> <br><br> {% endif %} {% endfor %}
+    <fieldset>
+        <legend>
+            Enter Command
+        </legend>
+        <form action="/runcomand">
+            <input type="text" name="cmd">
+            <input type="submit" value="Run">
+        </form>
+    </fieldset>
+    <br><br> {% if cmd %}
+    <h3>
+        **** {{ cmd }} ****
+    </h3>
+    {% endif %} {% if result %}
+    <a href="#">>>>Download as .xls</a><br><br>
+    <table>
+        {% for r in result %}
+        <tr>
+            {% for d in r %}
+            <td>{{ d }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+</body>
+
+</html>

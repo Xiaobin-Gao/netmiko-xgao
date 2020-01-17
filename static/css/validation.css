@@ -1,0 +1,11 @@
+h1 {
+    text-align: center;
+}
+
+#required {
+    color: red;
+}
+
+#succeed {
+    color: green;
+}
